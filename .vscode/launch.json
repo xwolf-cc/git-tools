@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GitMain",
+            "request": "launch",
+            "mainClass": "cc.xwolf.url.GitMain",
+            "projectName": "core-web"
+        }
+    ]
+}
