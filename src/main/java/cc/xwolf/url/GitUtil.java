@@ -14,8 +14,12 @@ public class GitUtil {
     }
 
     public static void gitClone(String remoteUrl, String repoDirPath) {
+        gitClone(remoteUrl,repoDirPath,"xuping","aaaaaaaa");
+    }
+
+    public static void gitClone(String remoteUrl, String repoDirPath,String username,String psw) {
         CloneCommand cc = Git.cloneRepository().setURI(remoteUrl);
-        cc.setCredentialsProvider(new UsernamePasswordCredentialsProvider("xuping", "密码"));
+        cc.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, psw));
         File file = new File(repoDirPath);
         file.mkdirs();
         try {
@@ -26,7 +30,5 @@ public class GitUtil {
 
         System.out.println("下载完成......");
     }
-
-
 }
 

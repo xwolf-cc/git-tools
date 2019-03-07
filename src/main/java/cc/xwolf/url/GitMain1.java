@@ -11,9 +11,15 @@ import java.io.IOException;
 import java.util.List;
 
 public class GitMain1 {
+   public  static  String token="oaD3Uz2sTmSTd4wU7MUM";
+   public  static  String githome="http://code.bestranran.ren";
+//public  static   String basePath = "D:\\base-workspace\\workspaces";
+    // public  static  String githome="https://gitlab.sinochem.cloud";
+    // public  static  String token="m5gx6F6YHuUsSnmXMMWW";
+    public  static   String basePath = "D:\\base-workspace\\code.bestranran.ren";
 
     public static void main(String[] args) throws IOException {
-        String basePath = "D:\\base-workspace\\workspaces";
+
         Files.createParentDirs(new File(basePath));
         //读取分组数据,最多处理50页
         for (int i = 1; i < 50; i++) {
@@ -54,7 +60,8 @@ public class GitMain1 {
      * @return
      */
     public static JSONArray getProjects(int groupId, int pageNumm) {
-        String url = "http://code.bestranran.ren/api/v3/groups/" + groupId + "/projects?page=" + pageNumm + "&private_token=oaD3Uz2sTmSTd4wU7MUM";
+        String url = githome+"/api/v3/groups/" + groupId + "/projects?page=" + pageNumm + "&private_token="+token;
+        System.out.println(url);
         return httpUtil(url);
     }
 
@@ -67,7 +74,8 @@ public class GitMain1 {
      * @throws IOException
      */
     public static JSONArray getGroup(int pageNumm) throws IOException {
-        String url = "http://code.bestranran.ren/api/v3/groups?page=" + pageNumm + "&private_token=oaD3Uz2sTmSTd4wU7MUM";
+        String url = githome+"/api/v3/groups?page=" + pageNumm + "&private_token="+token;
+        System.out.println(url);
         return httpUtil(url);
     }
 
